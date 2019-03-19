@@ -1,14 +1,14 @@
 [  
     {  
         "host":"tvnet.lv",
-        "source":[  
+        "url_list":[  
             "url1",
             "url2"
         ]
     },
     {  
         "host":"delfi.lv",
-        "source":[  
+        "url_list":[  
             "url1",
             "url2"
         ]
