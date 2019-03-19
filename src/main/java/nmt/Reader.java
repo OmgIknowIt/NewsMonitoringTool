@@ -33,10 +33,6 @@ public class Reader {
         }
 	}
 	
-	public static JSONArray getHostList() {
-		return hostList;
-	}
-	
 //    private static void parseData(JSONObject data)
 //    {
 //    	String host = (String) data.get("host");
