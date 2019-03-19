@@ -2,15 +2,15 @@
     {  
         "host":"tvnet.lv",
         "url_list":[  
-            "url1",
-            "url2"
+            "https://www.tvnet.lv/section/4235",
+            "https://www.tvnet.lv/section/4232"
         ]
     },
     {  
         "host":"delfi.lv",
         "url_list":[  
-            "url1",
-            "url2"
+            "https://www.delfi.lv/news/zinas/",
+            "https://www.delfi.lv/sports/"
         ]
     }
 ]
