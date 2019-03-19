@@ -1,0 +1,16 @@
+[  
+    {  
+        "host":"tvnet.lv",
+        "source":[  
+            "url1",
+            "url2"
+        ]
+    },
+    {  
+        "host":"delfi.lv",
+        "source":[  
+            "url1",
+            "url2"
+        ]
+    }
+]
