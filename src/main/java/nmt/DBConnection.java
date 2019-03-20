@@ -11,19 +11,24 @@ public class DBConnection {
 	EntityTransaction entityTransaction;
 	
 	public DBConnection() {
-		emf = Persistence.createEntityManagerFactory("h2-local"); // DB name needs to be included
+		emf = Persistence.createEntityManagerFactory("db_news");
 		em = emf.createEntityManager();
 		entityTransaction = em.getTransaction();
 	}
 	
-	public void createEntry(Integer id, String URL, String Title, String Source) {
+	public void createEntry(String URL, String Title, String Source) {
 		Content newsEntry = new Content();
-		newsEntry.setId(id);
 		newsEntry.setURL(URL);
 		newsEntry.setTitle(Title);
 		newsEntry.setSource(Source);
-		
+		em.getTransaction().begin();
 		em.persist(newsEntry);
+		em.getTransaction().commit();
+	}
+	
+	public static void main (String[] args){
+		DBConnection conn = new DBConnection();
+		conn.createEntry("xxxxxxx", "Title", "tvnet.lv");
 	}
 	
 }
