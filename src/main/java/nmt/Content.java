@@ -17,9 +17,9 @@ public class Content {
 	GeneratedValue
 	private Integer id;
 	
-	private String URL;
-	private String Title;
-	private String Source;
+	private String url;
+	private String title;
+	private String source;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
@@ -38,26 +38,26 @@ public class Content {
 	}
 
 	public String getURL() {
-		return URL;
+		return url;
 	}
 
-	public void setURL(String uRL) {
-		URL = uRL;
+	public void setURL(String url) {
+		this.url = url;
 	}
 
 	public String getTitle() {
-		return Title;
+		return title;
 	}
 
 	public void setTitle(String title) {
-		Title = title;
+		this.title = title;
 	}
 
 	public String getSource() {
-		return Source;
+		return source;
 	}
 
 	public void setSource(String source) {
-		Source = source;
+		this.source = source;
 	}
 }
