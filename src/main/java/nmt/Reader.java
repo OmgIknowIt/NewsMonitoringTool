@@ -23,14 +23,12 @@ public class Reader {
 	@SuppressWarnings("unchecked")
 	private void read() {
 		JSONParser data = new JSONParser();
-        try (FileReader reader = new FileReader(
-        		"/home/student/git/NewsMonitoringTools/src/main/java/nmt/source_urls.json"))
-        {
+        try {
+        	FileReader reader = new FileReader("/home/student/git/NewsMonitoringTools/src/main/java/nmt/source_urls.json");
             //Read JSON file
             Object obj = data.parse(reader);
-            
             hostList = (JSONArray) obj;
-             
+  
             //hostList.forEach( emp -> parseData( (JSONObject) emp ) );
  
         } catch (FileNotFoundException e) {
