@@ -13,17 +13,17 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "News_Collector")
 public class Content {
-	@Id@
-	GeneratedValue
+	@Id
+	@GeneratedValue
 	private Integer id;
 	
 	private String url;
 	private String title;
 	private String source;
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date;
-	
+
 	@PrePersist
 	protected void onPrePersist() {
 		date = new Date();
