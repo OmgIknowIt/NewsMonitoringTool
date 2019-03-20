@@ -4,7 +4,7 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>nmt.Content</class>
 		<properties>
-			<property name="hibernate.connection.url" value="jdbc:mysql://localhost/db_news"/>
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost/db_news?characterEncoding=UTF-8"/>
 			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
 			<property name="hibernate.connection.username" value="root"/>
 			<property name="hibernate.connection.password" value="Student007"/>
