@@ -5,6 +5,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>NewsMonitoringTools</name>
   <description>This is a group project</description>
+  	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
   <dependencies>
   	<dependency>
     	<groupId>com.googlecode.json-simple</groupId>
@@ -26,11 +29,6 @@
 			<artifactId>hibernate-jpa-2.1-api</artifactId>
 		</exclusion>
 	</exclusions>
-	</dependency>
-	<dependency>
-		<groupId>org.hibernate</groupId>
-		<artifactId>hibernate-entitymanager</artifactId>
-		<version>4.3.6.Final</version>
 	</dependency>
 	<dependency>
 		<groupId>mysql</groupId>
