@@ -17,34 +17,24 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-@Entity
-@Table(name = "News_Collector")
-public class Content {
-	@Id
-	@GeneratedValue
-	private Integer id;
 
-	private String URL;
-	private String Title;
-	private String Source;
+public class Crawler {
 
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date date;
 
-	public Content(StringBuffer content, String source) throws IOException {
-		getContent(content);
-		this.Source = source;
+	public Crawler(StringBuffer content, String source) throws IOException {
+		getContent(content, source);
 	}
 
-	private void getContent(StringBuffer content) throws IOException {
-		Document doc = Jsoup.parse(content.toString());
+	private void getContent(StringBuffer htmlCode, String source) throws IOException {
+		Document doc = Jsoup.parse(htmlCode.toString());
 		Elements links = doc.select("a.list-article__url");
 		for (Element link : links) {
 			Elements title = link.select("span.list-article__headline");
 			title.select(".list-article__comment").remove();
 			print(" * a: <%s>  (%s)", link.attr("abs:href"), title.text());
 			//TODO: send to DB
-			
+			DBConnection db = new DBConnection();
+			db.createEntry(link.attr("abs:href"), title.text(), source);
 		}
 	}
 
@@ -52,40 +42,5 @@ public class Content {
 		System.out.println(String.format(msg, args));
 	}
 
-	@PrePersist
-	protected void onPrePersist() {
-		date = new Date();
-	}
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public String getURL() {
-		return URL;
-	}
-
-	public void setURL(String uRL) {
-		URL = uRL;
-	}
-
-	public String getTitle() {
-		return Title;
-	}
-
-	public void setTitle(String title) {
-		Title = title;
-	}
-
-	public String getSource() {
-		return Source;
-	}
-
-	public void setSource(String source) {
-		Source = source;
-	}
 }

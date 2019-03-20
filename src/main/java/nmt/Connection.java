@@ -12,14 +12,13 @@ import org.json.simple.JSONObject;
 
 public class Connection {
 
-	private StringBuffer content = null;
-
 	public Connection(JSONArray jsonData) throws IOException {
 		super();
 		httpConnection(jsonData);
 	}
 
 	private void httpConnection(JSONArray jsonData) throws IOException {
+		StringBuffer htmlCode = null;
 		HttpURLConnection con = null;
 		BufferedReader in = null;
 		InputStreamReader streamReader = null;
@@ -46,20 +45,16 @@ public class Connection {
 				}
 				in = new BufferedReader(streamReader);
 				String inputLine;
-				content = new StringBuffer();
+				htmlCode = new StringBuffer();
 				while ((inputLine = in.readLine()) != null) {
-					content.append(inputLine);
+					htmlCode.append(inputLine);
 				}
 				//
-				new Content(content, (String) obj.get("host"));
+				new Crawler(htmlCode, (String) obj.get("host"));
 			}
 			in.close(); // close BufferedReader
 			con.disconnect(); // close HttpURLConnection
 		}
-	}
-
-	public StringBuffer getContent() {
-		return content;
 	}
 
 }
