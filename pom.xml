@@ -5,7 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>NewsMonitoringTools</name>
   <description>This is a group project</description>
-  	<properties>
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
   <dependencies>
@@ -22,18 +22,22 @@
     <dependency>
 		<groupId>org.hibernate</groupId>
 		<artifactId>hibernate-entitymanager</artifactId>
-		<version>4.3.6.Final</version>
-	<exclusions>
-		<exclusion>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.1-api</artifactId>
-		</exclusion>
-	</exclusions>
+			<version>4.2.8.Final</version>
 	</dependency>
 	<dependency>
 		<groupId>mysql</groupId>
 		<artifactId>mysql-connector-java</artifactId>
 		<version>5.1.31</version>
+	</dependency>
+	<dependency>
+		<groupId>org.jsoup</groupId>
+		<artifactId>jsoup</artifactId>
+		<version>1.10.2</version>
+	</dependency>
+	<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>javax.persistence</artifactId>
+			<version>2.0.0</version>
 	</dependency>
   </dependencies>
 </project>
