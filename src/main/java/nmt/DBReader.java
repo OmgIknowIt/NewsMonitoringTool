@@ -36,16 +36,5 @@ public class DBReader {
 		return list;
 	}
 	
-	public static void main(String[] args) {
-		DBReader reader = new DBReader();
-		
-		for (Object[] o : reader.searchContent("jeļena latvija")) {
-			String url = (String)o[0];
-			String title = (String)o[1];
-			String source = (String)o[2];
-			System.out.println(url + " " + title + " " + source);
-
-		}
-	}
 	
 }
