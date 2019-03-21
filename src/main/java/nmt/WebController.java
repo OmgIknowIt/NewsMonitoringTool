@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
 @Controller
 @RequestMapping(value = "/", produces = "text/html;charset=UTF-8")
 public class WebController {
@@ -22,40 +21,41 @@ public class WebController {
 	public String homePage(@RequestParam(value = "tags", required = false) String tags) {
 		StringBuilder sb = new StringBuilder();
 		if (tags != null) {
-			
+
 			sb.append("<form action=''>\n");
-			sb.append("not null");
+			// sb.append("not null");
 			sb.append("Search: <input type='text' name='tags' value=''><br/>\n");
 			sb.append("<input type='submit' value='Find'><br/>\n");
 			sb.append("<table>\n");
-			
+
 			DBReader reader = new DBReader();
-			
+
 			for (Object[] o : reader.searchContent(tags)) {
-				String url = (String)o[0];
-				String title = (String)o[1];
-				String source = (String)o[2];
+				String url = (String) o[0];
+				String title = (String) o[1];
+				String source = (String) o[2];
 				sb.append("<tr>\n");
-				sb.append("<td>" + source +"</td>\n");
-				sb.append("<td>" + title +"</td>\n");
-				sb.append("<td>" + url +"</td>\n");
+				sb.append("<td>" + source + "</td>\n");
+				// sb.append("<td>" + title + "</td>\n");
+				// sb.append("<td>" + url + "</td>\n");
+				sb.append("<td><a href=\"" + url + "\" target=\"_blank\">" + title + "</a></td>\n");
 				sb.append("</tr>\n");
 
 			}
-			sb.append("true<br/>\n");
+			// sb.append("true<br/>\n");
 			sb.append("<a href='/'>Back</a>\n");
-//			response.setStatus(HttpServletResponse.SC_OK);
+			// response.setStatus(HttpServletResponse.SC_OK);
 			return sb.toString();
-		} 
-		
+		}
+
 		sb.append("<form action=''>\n");
-		sb.append("null");
+		// sb.append("null");
 		sb.append("Search: <input type='text' name='tags' value=''><br/>\n");
 		sb.append("<input type='submit' value='Find'></form><br/>\n");
 		sb.append("<a href='/'>Back</a>\n");
-//		response.setStatus(HttpServletResponse.SC_OK);
-			
+		// response.setStatus(HttpServletResponse.SC_OK);
+
 		return sb.toString();
 	}
-	
+
 }
