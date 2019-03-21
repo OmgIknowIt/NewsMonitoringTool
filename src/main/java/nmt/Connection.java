@@ -35,6 +35,7 @@ public class Connection {
 				URL url = new URL(iterator.next());
 				con = (HttpURLConnection) url.openConnection();
 				con.setRequestMethod("GET");
+				con.setConnectTimeout(8000);
 				//
 				// Reading the Response on Failed Requests
 				int status = con.getResponseCode();
