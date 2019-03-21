@@ -50,7 +50,7 @@ public class Connection {
 					htmlCode.append(inputLine);
 				}
 				//
-				new Crawler(htmlCode, (String) obj.get("host"));
+				new Crawler(htmlCode, (String) obj.get("host"), (String) obj.get("url"), (String) obj.get("title"));
 			}
 			in.close(); // close BufferedReader
 			con.disconnect(); // close HttpURLConnection
