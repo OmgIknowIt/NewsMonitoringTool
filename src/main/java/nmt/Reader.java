@@ -31,7 +31,7 @@ public class Reader {
 			// Read JSON file
 			Object obj = data.parse(reader);
 			hostList = (JSONArray) obj;
-//			hostList.forEach( emp -> parseData( (JSONObject) emp ) );
+			// hostList.forEach( emp -> parseData( (JSONObject) emp ) );
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -46,16 +46,16 @@ public class Reader {
 		return hostList;
 	}
 
-//	 private static void parseData(JSONObject data)
-//	 {
-//	 String host = (String) data.get("host");
-//	 JSONArray urls = (JSONArray) data.get("url_list");
-//	
-//	 System.out.println("Name: " + host);
-//	 System.out.println("\nUrls:");
-//	 Iterator<String> iterator = urls.iterator();
-//	 while (iterator.hasNext()) {
-//	 System.out.println(iterator.next());
-//	 }
-//	 }
+	// private static void parseData(JSONObject data)
+	// {
+	// String host = (String) data.get("host");
+	// JSONArray urls = (JSONArray) data.get("url_list");
+	//
+	// System.out.println("Name: " + host);
+	// System.out.println("\nUrls:");
+	// Iterator<String> iterator = urls.iterator();
+	// while (iterator.hasNext()) {
+	// System.out.println(iterator.next());
+	// }
+	// }
 }
