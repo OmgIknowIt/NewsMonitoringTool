@@ -24,7 +24,7 @@ public class WebController {
 
 			sb.append("<form action=''>\n");
 			// sb.append("not null");
-			sb.append("Search: <input type='text' name='tags' value=''><br/>\n");
+			sb.append("Search: <input type='text' name='tags' value=''>\n");
 			sb.append("<input type='submit' value='Find'><br/>\n");
 			sb.append("<table>\n");
 
@@ -50,7 +50,7 @@ public class WebController {
 
 		sb.append("<form action=''>\n");
 		// sb.append("null");
-		sb.append("Search: <input type='text' name='tags' value=''><br/>\n");
+		sb.append("Search: <input type='text' name='tags' value=''>\n");
 		sb.append("<input type='submit' value='Find'></form><br/>\n");
 		sb.append("<a href='/'>Back</a>\n");
 		// response.setStatus(HttpServletResponse.SC_OK);
