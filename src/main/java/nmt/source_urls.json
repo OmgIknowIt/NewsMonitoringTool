@@ -6,5 +6,13 @@
 		"url_list": [
 			"https://www.tvnet.lv/section/4235"
 		]
+	},
+	{
+		"host": "delfi.lv",
+		"url": "a.text-mine-shaft",
+		"title": "a.text-mine-shaft .headline__title",
+		"url_list": [
+			"https://www.delfi.lv/news/zinas/"
+		]
 	}
 ]

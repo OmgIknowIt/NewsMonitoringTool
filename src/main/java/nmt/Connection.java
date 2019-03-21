@@ -35,6 +35,7 @@ public class Connection {
 				URL url = new URL(iterator.next());
 				con = (HttpURLConnection) url.openConnection();
 				con.setRequestMethod("GET");
+				con.setConnectTimeout(8000);
 				//
 				// Reading the Response on Failed Requests
 				int status = con.getResponseCode();
@@ -50,7 +51,7 @@ public class Connection {
 					htmlCode.append(inputLine);
 				}
 				//
-				new Crawler(htmlCode, (String) obj.get("host"));
+				new Crawler(htmlCode, (String) obj.get("host"), (String) obj.get("url"), (String) obj.get("title"));
 			}
 			in.close(); // close BufferedReader
 			con.disconnect(); // close HttpURLConnection

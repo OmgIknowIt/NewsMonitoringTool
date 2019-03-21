@@ -16,7 +16,7 @@ public class Content {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	
+
 	private String url;
 	private String title;
 	private String source;
