@@ -26,9 +26,10 @@ public class DBConnection {
 		em.getTransaction().commit();
 	}
 	
+
 	public static void main (String[] args){
 		DBConnection conn = new DBConnection();
-		conn.createEntry("xxxxxxx", "Title", "tvnet.lv");
+		conn.createEntry("https://tvnet.lv/", "Jeļena kļuva par miljonāru", "tvnet.lv");
 	}
 	
 }

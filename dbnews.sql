@@ -1,5 +1,5 @@
 drop database if exists db_news;
-create database db_news;
+create database db_news CHARACTER SET utf8mb4;
 use db_news;
 
 
