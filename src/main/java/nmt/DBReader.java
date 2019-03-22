@@ -28,7 +28,7 @@ public class DBReader {
 		for (String s : arr) {
 
 			entityTransaction.begin();
-			Query query = em.createQuery("Select url, title, source from Content c where title like '%" + s + "%'");
+			Query query = em.createQuery("Select url, title, source from Content c where title like '%" + s + "%' order by source");
 			entityTransaction.commit();
 			list.addAll((query.getResultList()));
 
