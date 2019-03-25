@@ -21,18 +21,29 @@ public class DBReader {
 		entityTransaction = em.getTransaction();
 	}
 
-	public List<Object[]> searchContent(String tags) {
+	public List<Object[]> searchContent(String tags, List<String> sources) {
 		List<Object[]> list = new ArrayList();
 		String[] arr = tags.split(" ");
+		
+		for (String tag : arr) {
 
-		for (String s : arr) {
-
+			String queryString = "Select url, title, source from Content c where title like :tag and (";
+			for (int i = 0; i < sources.size(); i++) {
+				queryString += "source =:source" + i + " or ";
+			}			
+			queryString = queryString.substring(0, queryString.length() - 4) + ")";
+				
 			entityTransaction.begin();
-			Query query = em.createQuery("Select url, title, source from Content c where title like '%" + s + "%' order by source");
+			Query query = em.createQuery(queryString);
+			query.setParameter("tag", "%" + tag + "%");
+			for (int i = 0; i < sources.size(); i++) {
+				query.setParameter("source" + i, sources.get(i));
+			}
 			entityTransaction.commit();
 			list.addAll((query.getResultList()));
 
 		}
+
 		return list;
 	}
 
