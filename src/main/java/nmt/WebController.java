@@ -48,6 +48,7 @@ public class WebController {
 
 			}
 			sb.append("<a href='/'>Back</a>\n");
+			reader.emf.close();
 			return sb.toString();
 		}
 

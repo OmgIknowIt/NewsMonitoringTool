@@ -42,6 +42,8 @@ public class Crawler {
 			print(" * a: <%s> (%s)", link.attr("abs:href"), title.text());
 			DBConnection db = new DBConnection();
 			db.createEntry(link.attr("abs:href"), title.text(), source);
+			db.em.close();
+			db.emf.close();
 		}
 	}
 
