@@ -4,7 +4,8 @@
 		"url": "a.list-article__url",
 		"title": "span.list-article__headline :: not,.list-article__comment",
 		"url_list": [
-			"https://www.tvnet.lv/section/4235"
+			"https://www.tvnet.lv/rss :: rss",
+			"https://www.tvnet.lv/section/4235 :: url"
 		]
 	},
 	{
@@ -12,7 +13,8 @@
 		"url": "#ajax-headlines .row a.text-mine-shaft",
 		"title": "a.text-mine-shaft .headline__title",
 		"url_list": [
-			"https://www.delfi.lv/news/zinas/"
+			"https://www.delfi.lv/news/zinas/ :: url",
+			"https://www.delfi.lv/rss/?channel=delfi :: rss"
 		]
 	}
 ]
