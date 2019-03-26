@@ -1,5 +1,9 @@
 package nmt;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -17,7 +21,7 @@ public class DBConnection {
 		em = emf.createEntityManager();
 		entityTransaction = em.getTransaction();
 	}
-
+	
 	// Creates entries into DB
 	public void createEntry(String URL, String Title, String Source) {
 		Content newsEntry = new Content();
@@ -37,6 +41,21 @@ public class DBConnection {
 			entityTransaction.commit();
 		}
 
+	}
+
+	public void deleteOldEntry() {
+	    Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+	    Calendar cal = Calendar.getInstance();
+	    cal.setTimeInMillis(timestamp.getTime());
+		cal.add(Calendar.MONTH, -1);
+		timestamp = new Timestamp(cal.getTime().getTime());
+		entityTransaction.begin();
+		Query query = em.createQuery("DELETE FROM Content c WHERE date < :dateDiff");
+		query.setParameter("dateDiff", timestamp);
+		query.executeUpdate();
+		entityTransaction.commit();
+		em.close();
+		emf.close();
 	}
 
 }
