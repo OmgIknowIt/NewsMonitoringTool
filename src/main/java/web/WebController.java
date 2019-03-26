@@ -1,4 +1,4 @@
-package nmt;
+package web;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import nmt.DBReader;
 
 @Controller
 @RequestMapping(value = "/", produces = "text/html;charset=UTF-8")
@@ -48,7 +50,6 @@ public class WebController {
 
 			}
 			sb.append("<a href='/'>Back</a>\n");
-			reader.emf.close();
 			return sb.toString();
 		}
 
