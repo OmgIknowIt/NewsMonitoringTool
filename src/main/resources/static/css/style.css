@@ -1,6 +1,110 @@
 body {
-    padding-top: 7rem;
-    background-color: #F8F8FF;
-}.align-template {
-    text-align: center;
+	background: #ddd url(../img/nmt-logo.png) no-repeat 50% -20%;
+	width: 100%;
+	color: #777;
+}
+
+.align-template {
+	text-align: center;
+}
+
+.conteiner {
+	padding: 30px;
+	margin: 50px 20px;
+}
+
+li {
+	list-style-type: none;
+}
+
+ul {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+.news li {
+	min-height: 30px;
+	display: block;
+}
+
+.news li p {
+	margin: 0;
+	padding: 0;
+}
+
+form {
+	position: absolute;
+	top: 40%;
+	left: 37%;
+}
+
+
+input {
+	outline: none;
+	margin: 0px 10px 10px 0px;
+}
+
+input[type=text] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+
+input::-webkit-search-decoration, input::-webkit-search-cancel-button {
+	display: none; /* remove the search and cancel icon */
+}
+
+input[type=text] {
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 320px;
+	position: relative;
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+
+input[type=text]:focus {
+	width: 330px;
+	background-color: #fff;
+	border-color: #6e0e88;
+	-webkit-box-shadow: 0 0 10px rgba(157, 12, 251, 0.49);
+	-moz-box-shadow: 0 0 10px rgba(157, 12, 251, 0.49);
+	box-shadow: 0 0 10px rgba(157, 12, 251, 0.49);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+button {
+	border: none;
+	outline: none;
+	border-radius: 3px;
+}
+
+button {
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	background: url("../img/ico-search.png") no-repeat center top;
+	top: 5px;
+	right: 25px;
+	cursor: pointer;
+}
+
+button, button:active, button:hover, button:focus {
+	outline: none;
+}
+
+button:focus {
+	background-position: center bottom;
+}
+
+button:hover {
+	background-position: center center;
 }

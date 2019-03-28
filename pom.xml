@@ -5,71 +5,54 @@
 	<groupId>com.group.project</groupId>
 	<artifactId>NMT</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.3.RELEASE</version>
 	</parent>
 
-		<properties>
-
+	<name>NewsMonitoringTools</name>
+	<description>This is a group project</description>
+	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
 		<maven.compiler.source>1.8</maven.compiler.source>
-
 		<maven.compiler.target>1.8</maven.compiler.target>
-
 	</properties>
 
 	<dependencies>
-
 		<dependency>
-
 			<groupId>com.googlecode.json-simple</groupId>
-
 			<artifactId>json-simple</artifactId>
-
 			<version>1.1.1</version>
-
 		</dependency>
-
 		<dependency>
-
 			<groupId>org.hibernate</groupId>
-
 			<artifactId>hibernate-entitymanager</artifactId>
-
 		</dependency>
-
-
 		<dependency>
-
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>6.0.6</version>
+		</dependency>
+		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
-
 			<artifactId>javax.persistence</artifactId>
-
 			<version>2.0.0</version>
-
 		</dependency>
-
 		<dependency>
-
 			<groupId>org.jsoup</groupId>
-
 			<artifactId>jsoup</artifactId>
-
 			<version>1.10.2</version>
-
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-    	<groupId>mysql</groupId>
-    		<artifactId>mysql-connector-java</artifactId>
-    		<version>6.0.6</version>
+			<groupId>org.thymeleaf</groupId>
+			<artifactId>thymeleaf-spring5</artifactId>
+			<version>3.0.11.RELEASE</version>
 		</dependency>
 		<dependency>
 		    <groupId>rome</groupId>
@@ -77,10 +60,4 @@
 		    <version>1.0</version>
 		</dependency>
 	</dependencies>
-	
-		<name>NewsMonitoringTools</name>
-	<description>This is a group project</description>
-
-
-
 </project>

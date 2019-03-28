@@ -6,7 +6,7 @@
 			"https://www.tvnet.lv/rss :: rss"
 		]
 	},
-		{
+	{
 		"host": "rus.tvnet.lv",
 		"title": "span.list-article__headline :: not,.list-article__comment",
 		"url_list": [

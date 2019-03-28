@@ -10,6 +10,5 @@ import org.springframework.context.annotation.Configuration;
 public class WebApp {
 	public static void main(String[] args) throws Exception {
 		 SpringApplication.run(WebApp.class, args);
-
 	}
 }
