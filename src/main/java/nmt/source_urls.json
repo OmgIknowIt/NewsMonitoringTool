@@ -1,10 +1,16 @@
 [
 	{
 		"host": "tvnet.lv",
-		"url": "a.list-article__url",
 		"title": "span.list-article__headline :: not,.list-article__comment",
 		"url_list": [
 			"https://www.tvnet.lv/rss :: rss"
+		]
+	},
+		{
+		"host": "rus.tvnet.lv",
+		"title": "span.list-article__headline :: not,.list-article__comment",
+		"url_list": [
+			"https://rus.tvnet.lv/rss :: rss"
 		]
 	},
 	{
@@ -13,6 +19,14 @@
 		"title": "a.text-mine-shaft .headline__title",
 		"url_list": [
 			"https://www.delfi.lv/news/zinas/ :: url"
+		]
+	},
+	{
+		"host": "rus.delfi.lv",
+		"url": "#ajax-headlines .row a.text-mine-shaft",
+		"title": "a.text-mine-shaft .headline__title",
+		"url_list": [
+			"https://rus.delfi.lv/news/novosti/ :: url"
 		]
 	}
 ]

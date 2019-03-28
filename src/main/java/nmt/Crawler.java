@@ -47,30 +47,23 @@ public class Crawler {
 			} else {
 				title = link.select(selectTitle);
 			}
-
-			//print(" * a: <%s> (%s)", link.attr("abs:href"), title.text());
 			DBConnection db = new DBConnection();
 			db.createEntry(link.attr("abs:href"), title.text(), source);
 			db.em.close();
 			db.emf.close();
 		}
 	}
-	
-	private void getContentFeed(SyndFeed feed, String source) {
-        try {
-        	for (SyndEntry entry : (List<SyndEntry>)feed.getEntries()) {
-        		//print(" * a: <%s> (%s)", entry.getLink(), entry.getTitle());
-    			DBConnection db = new DBConnection();
-    			db.createEntry(entry.getLink(), entry.getTitle(), source);
-    			db.em.close();
-    			db.emf.close();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-	}
 
-//	private static void print(String msg, Object... args) {
-//		System.out.println(String.format(msg, args));
-//	}
+	private void getContentFeed(SyndFeed feed, String source) {
+		try {
+			for (SyndEntry entry : (List<SyndEntry>) feed.getEntries()) {
+				DBConnection db = new DBConnection();
+				db.createEntry(entry.getLink(), entry.getTitle(), source);
+				db.em.close();
+				db.emf.close();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
