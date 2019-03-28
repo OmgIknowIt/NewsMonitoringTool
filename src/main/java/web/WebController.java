@@ -22,7 +22,9 @@ public class WebController {
 	@ResponseBody
 	public String homePage(@RequestParam(value = "tags", required = false) String tags, 
 	@RequestParam(value = "tvnet", required = false) String tvnet,
-	@RequestParam(value = "delfi", required = false) String delfi) {
+	@RequestParam(value = "delfi", required = false) String delfi,
+	@RequestParam(value = "rus.tvnet", required = false) String rusTvnet,
+	@RequestParam(value = "rus.delfi", required = false) String rusDelfi) {
 		StringBuilder sb = new StringBuilder();
 		if (tags != null) {
 
@@ -31,12 +33,16 @@ public class WebController {
 			sb.append("Search: <input type='text' name='tags' value=" + tags + ">\n");
 			sb.append("<input type='checkbox' name='tvnet' value='tvnet.lv' checked> tvnet.lv\n");
 			sb.append("<input type='checkbox' name='delfi' value='delfi.lv' checked> delfi.lv\n");
+			sb.append("<input type='checkbox' name='rus.delfi' value='rus.delfi.lv' checked> rus.delfi.lv\n");
+			sb.append("<input type='checkbox' name='rus.tvnet' value='rus.tvnet.lv' checked> rus.tvnet.lv\n");
 			sb.append("<input type='submit' value='Find'><br/>\n");
 			sb.append("<table>\n");
 
 			List<String> sources = new ArrayList();
 			sources.add(tvnet);
 			sources.add(delfi);
+			sources.add(rusTvnet);
+			sources.add(rusDelfi);
 			DBReader reader = new DBReader();
 
 			for (Object[] o : reader.searchContent(tags, sources)) {
@@ -57,6 +63,8 @@ public class WebController {
 		sb.append("Search: <input type='text' name='tags' value=''>\n");
 		sb.append("<input type='checkbox' name='tvnet' value='tvnet.lv' checked> tvnet.lv\n");
 		sb.append("<input type='checkbox' name='delfi' value='delfi.lv' checked> delfi.lv\n");
+		sb.append("<input type='checkbox' name='rus.delfi' value='rus.delfi.lv' checked> rus.delfi.lv\n");
+		sb.append("<input type='checkbox' name='rus.tvnet' value='rus.tvnet.lv' checked> rus.tvnet.lv\n");
 		sb.append("<input type='submit' value='Find'></form><br/>\n");
 		sb.append("<a href='/'>Back</a>\n");
 
