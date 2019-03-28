@@ -21,8 +21,9 @@ public class DBReader {
 		entityTransaction = em.getTransaction();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<Object[]> searchContent(String tags, List<String> sources) {
-		List<Object[]> list = new ArrayList();
+		List<Object[]> list = new ArrayList<Object[]>();
 		String[] arr = tags.split(" ");
 		
 		for (String tag : arr) {
