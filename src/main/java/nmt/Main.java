@@ -1,4 +1,5 @@
 package nmt;
+
 import web.WebApp;
 
 import java.io.IOException;
@@ -9,7 +10,6 @@ public class Main {
 		WebApp.main(args);
 		new Connection(new Reader().getJsonData());
 		new DBConnection().deleteOldEntry();
-		
 	}
 
 }

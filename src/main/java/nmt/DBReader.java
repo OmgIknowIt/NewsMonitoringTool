@@ -47,6 +47,4 @@ public class DBReader {
 
 		return list;
 	}
-
 }
-

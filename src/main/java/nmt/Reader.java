@@ -28,7 +28,6 @@ public class Reader {
 			FileReader reader = new FileReader(file);
 			Object obj = data.parse(reader);
 			hostList = (JSONArray) obj;
-
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -41,5 +40,4 @@ public class Reader {
 	public JSONArray getJsonData() {
 		return hostList;
 	}
-
 }
