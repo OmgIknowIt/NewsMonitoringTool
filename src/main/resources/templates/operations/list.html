@@ -12,9 +12,9 @@
         </thead>
         <tbody>
           <tr th:each="array : ${arrayList}">
-            <td th:text="${array[2]}"></td>
+            <td th:text="${array[2]}" class="sites"></td>
             <td>
-            <a th:href="@{${array[0]}}">
+            <a th:href="@{${array[0]}}" target="_blank">
               <p th:text="${array[1]}"></p>
               </a>
             </td>

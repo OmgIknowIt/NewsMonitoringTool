@@ -1,17 +1,35 @@
 <!DOCTYPE html>
-<html lang="eng"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="eng" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <div th:fragment="header">
-    <nav class="navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" th:href="@{/}">News Monitoring Tools</a>
-                <ul class="nav navbar-nav">
-                    <li><a href="#" th:href="@{/}"></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+	<nav class="navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<div class="search-wrapper">
+					<form method="get" action="">
+					
+						<input type="text" name="tags" value="" th:value="${tags}" autocomplete="off">
+						<button type="submit" value="Find"></button>
+						
+						<div class="dropdown">
+							<span class="btn btn-secondary dropdown-toggle" href="" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Sources </span>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+								<li class="dropdown-item"><input type="checkbox"
+									name="tvnet" value='tvnet.lv' checked>tvnet.lv</li>
+								<li class="dropdown-item"><input type="checkbox"
+									name="delfi" value='delfi.lv' checked>delfi.lv</li>
+								<li class="dropdown-item"><input type="checkbox"
+									name="rus.tvnet" value='rus.delfi.lv' checked>rus.delfi.lv</li>
+								<li class="dropdown-item"><input type="checkbox"
+									name="rus.delfi" value='rus.tvnet.lv' checked>rus.delfi.lv</li>
+							</ul>
+						</div>
+
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</nav>
 </div>
 </html>
