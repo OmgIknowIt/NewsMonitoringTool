@@ -1,0 +1,68 @@
+  _______                     _  _   
+ |__   __|                   | || |  
+    | | ___  __ _ _ __ ___   | || |_ 
+    | |/ _ \/ _` | '_ ` _ \  |__   _|
+    | |  __/ (_| | | | | | |    | |  
+    |_|\___|\__,_|_| |_| |_|    |_|  
+                                     
+                                     
+  _   _                     __  __             _ _             _               _______          _ 
+ | \ | |                   |  \/  |           (_) |           (_)             |__   __|        | |
+ |  \| | _____      _____  | \  / | ___  _ __  _| |_ ___  _ __ _ _ __   __ _     | | ___   ___ | |
+ | . ` |/ _ \ \ /\ / / __| | |\/| |/ _ \| '_ \| | __/ _ \| '__| | '_ \ / _` |    | |/ _ \ / _ \| |
+ | |\  |  __/\ V  V /\__ \ | |  | | (_) | | | | | || (_) | |  | | | | | (_| |    | | (_) | (_) | |
+ |_| \_|\___| \_/\_/ |___/ |_|  |_|\___/|_| |_|_|\__\___/|_|  |_|_| |_|\__, |    |_|\___/ \___/|_|
+                                                                        __/ |                     
+                                                                       |___/                                  
+
+
+                 
+	User Guide
+
+ What is the News Monitoring Tool?
+
+The News Monitoring Tool consists of a Spring Boot web application that crawls a predefined set of news websites, collects news headlines into an internal database and displays them to the user as hyperlinks according to a keyword search result.
+
+How to run the application?
+
+1. Extract the NewsMonitoringTools.zip file into your Eclipse workspace directory.
+2. Launch Eclipse.
+3. Go to File > Open Project from File System…
+4. Navigate to the folder “NewsMonitoringTools” and press Finish.
+5. Launch MySQL Workbench.
+6. Set up a new local connection or open existing one.
+7. Go to File > Open SQL Script…
+8. Navigate to the folder “NewsMonitoringTools” and open the script “dbnews.sql”.
+9. Execute the script to create database.
+10. In Eclipse’s Package Explorer, right-click “Main.java”, select “Run As > Java Application” and 
+wait approx.30 seconds for it to finish.
+11 Open your web browser
+12. Enter “localhost:8080” into the address bar and press Enter.
+
+Setup is done.
+
+How to use the application?
+
+You will see an interface with a search bar and a selection of sources to be searched.
+
+Type your keyword into the search bar and press Find.
+
+You will see a selection of news headlines featuring your keyword as clickable links, currently from the sites tvnet.lv and delfi.lv.
+
+How to add new news websites for parsing?
+1. Open file “source_urls.json”
+2. Add this structure:
+    {
+        "host": "hostName.lv",
+        "url": "<insert jquery selector for links>",
+        "title": "<insert jquery selector for titles>",
+        "url_list": [
+            "https://www.linkToNewsWebsite.com/news :: url",
+            "https://www.linkToNewsWebsite.com/rss :: rss"
+        ]
+    }
+3. if necessary to parse only rss feeds url and title selectors not needed
+
+Technology used
+
+The News Monitoring Tool is written in Java using Java Persistence API, Jsoup library, JSON library, Spring framework.
