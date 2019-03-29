@@ -30,33 +30,25 @@ public class Content {
 		date = new Date();
 	}
 
-	public Integer getId() {
-		return id;
-	}
+	
 
-	public void setId(Integer id) {
+	/*public void setId(Integer id) {
 		this.id = id;
-	}
+	}*/
 
-	public String getURL() {
-		return url;
-	}
+	
 
 	public void setURL(String url) {
 		this.url = url;
 	}
 
-	public String getTitle() {
-		return title;
-	}
+	
 
 	public void setTitle(String title) {
 		this.title = title;
 	}
 
-	public String getSource() {
-		return source;
-	}
+
 
 	public void setSource(String source) {
 		this.source = source;
